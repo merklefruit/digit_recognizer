@@ -7,3 +7,12 @@ The network was trained on the MNIST database in Jupyter Notebook with the Keras
 This project is available as a full featured demo here: http://fast-ai-learn-237208.appspot.com/
 
 In this demo there is also a brief explanation of how the neural network works.
+
+
+## Installation
+
+1. Just cd in the flask_3 folder, activate your virtual environment, and run:
+
+pip install -r requirements.txt
+
+flask run
