@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<h1>User: <b>{{ user.username }}</b></h1>
+				<p>{{ user.about_me}}
+				 {% if user == current_user %}
+	    		 	<p><a href="{{ url_for('edit_profile') }}">Edit your profile</a></p>
+	    		 {% endif %}
+				<hr>
+				</p>
+
+					<div class="alert alert-success" role="alert">
+  						You are logged in and you can access the digit recognition page. Thanks!
+					</div>
+
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+	</div>
+
+{% endblock %}
+
+

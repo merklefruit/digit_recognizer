@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+
+			<h1 align="center">Handwritten Digit Recognition with Convolutional Neural Networks</h1>
+			<br>
+
+
+			<div class="jumbotron">
+			 	<p class="lead">
+			 		This web app was made to demonstrate a Python implementation of web inference capability.
+			 	</p>
+			 		<hr>
+			 	<p>
+					The network was trained on the MNIST database in Jupyter Notebook with the Keras library with Tensorflow backend.
+					The recognition error on the test data set is 0.75% after 12 epochs, without hyperparameter tuning.
+
+					The convolutional neural network I used is an 8-layer Sequential model.
+			 	</p>
+			  	<hr class="my-4">
+			  	<p>
+			  		Please login or register to access the digit recognizer demo.
+			  	</p>
+			  	<a class="btn btn-primary btn-lg" href="{{ url_for('login') }}" role="button">Login/Register</a>
+			</div>
+
+		</div>
+		<div class="col-md-2"></div>
+	</div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+
+
+			<h1 align="center">Handwritten Digit Recognition</h1>
+			<canvas id="canvas" width="280" height="280" style="border:8px solid; float: left; margin: 10px; margin-top: 40px; border-radius: 2px; cursor: crosshair;"></canvas>
+
+			<div id="debug" style="margin-top: 50px">
+				<button type="button" id="clearButton" class="btn btn-secondary">Clear</button>
+				<br/>
+				<p class="lead">Draw a digit inside the canvas</p>
+			</div>
+
+			<div style="margin-top: 180px; float: left;">
+				<button type="button" href="#" class="btn btn-primary myButton">Predict</button>
+			</div>
+
+			<div>
+				<h3 id="result"></h3>
+			</div>
+
+			<div class="container" style="float: left; margin-top: 2px;">
+				<div class="row">
+					<div class="col-md-1"></div>
+					<div class="col-md-10">
+						<hr>
+						<h2>How it works:</h2>
+						<p>
+							The neural network was trained on the MNIST dataset in a Jupyter Notebook in Python, using ADAM, an algorithm for first-order gradient-based optimization of stochastic objective functions, based on adaptive estimates of lower-order moments. The loss function choosen was categorical crossentropy, since there are 10 classes.<br>
+							The network itself is an 8 layer sequential model, which has 784 input units (28x28 resolution grayscale images, normalized to values ranging from [-1: 1]). The network structure is as follows:<br>
+							<ul>
+								<li>2 Convolutional layers with rectified linear unit activation</li>
+								<li>A Pooling layer to choose the best features of the digits</li>
+								<li>A Dropout laye to improve convergence</li>
+								<li>A Flatten layer since there are too many dimensions and we need only 10 classes</li>
+								<li>A Dense layer, fully connected, to get all relevant data</li>
+								<li>A second Dropout layer</li>
+								<li>A Dense layer with softmax activation to squash the matrix into output probabilities</li>
+							</ul>
+
+							Using this training method I was able to obtain 99.25% test accuracy after only 12 epochs, without hyperparameter tuning, so there is still room for improvement.<br>
+							The training process took 16 seconds per epoch on a GRID 520 GPU.
+							<br>
+						</p>
+						<h4>Preprocessing</h4>
+						<p>
+							When you draw an image in the canvas, you are writing into a 280x280px area. <br>The preprocessing is needed so that the output of the canvas is as similar as possible to the training data, in order to not loose accuracy.<br>
+							First of all, the image is converted in a base64 string, then its colors are inverted so that the majority of the canvas is black (this makes it easier for the classifier); finally, it is resized to 28x28px, the same as the training data.
+
+						</p>
+
+
+					</div>
+					<div class="col-md-1"></div>
+				</div>
+			</div>
+
+
+			<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+			<script src="{{ url_for('static',filename='predict.js') }}"></script>
+			<script type="text/javascript">
+	   
+		   		$(".myButton").click(function(){
+		   			var $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+		   			var canvasObj = document.getElementById("canvas");
+		   			var img = canvasObj.toDataURL();
+		   			$.post('/predict', img).done(function(data){
+	   					$('#result').text(' Predicted Output: '+data);
+					})
+		   		});
+		   
+		   </script>
+
+
+
+
+{% endblock %}

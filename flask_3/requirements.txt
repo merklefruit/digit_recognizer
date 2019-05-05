@@ -1,0 +1,14 @@
+Flask
+python-dotenv
+flask-wtf
+flask-sqlalchemy
+flask-migrate
+flask-login
+flask-bootstrap
+Werkzeug
+gunicorn
+keras
+tensorflow
+numpy
+gevent
+Pillow
