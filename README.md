@@ -13,6 +13,6 @@ In this demo there is also a brief explanation of how the neural network works.
 
 1. Just cd in the flask_3 folder, activate your virtual environment, and run:
 
-pip install -r requirements.txt
+'pip install -r requirements.txt'
 
-flask run
+'flask run'
