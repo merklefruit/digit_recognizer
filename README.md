@@ -27,7 +27,7 @@ The network itself is an 8 layer sequential model, which has 784 input units (28
 							
   * 2 Convolutional layers with rectified linear unit activation
   * A Pooling layer to choose the best features of the digits
-  * A Dropout laye to improve convergence
+  * A Dropout layer to improve convergence
   * A Flatten layer since there are too many dimensions and we need only 10 classes
   * A Dense layer, fully connected, to get all relevant data
   * A second Dropout layer
