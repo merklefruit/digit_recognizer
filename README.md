@@ -36,3 +36,7 @@ The training process took 16 seconds per epoch on a GRID 520 GPU.
 
 When you draw an image in the canvas, you are writing into a 280x280px area. The preprocessing is needed so that the output of the canvas is as similar as possible to the training data, in order to not loose accuracy.
 First of all, the image is converted in a base64 string, then its colors are inverted so that the majority of the canvas is black (this makes it easier for the classifier); finally, it is resized to 28x28px, the same as the training data.
+
+
+### Notes on Deploying
+Originally I had deployed this project on Google Cloud and mapped it to my personal domain, but after several months I have decided that it's not worth keeping it online as far as costs are concerned, for now.
