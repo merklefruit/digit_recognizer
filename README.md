@@ -9,9 +9,16 @@ The network was trained on the MNIST database in Jupyter Notebook with the Keras
 
 1. Just cd in the flask_3 folder, activate your virtual environment, and run:
 
-
+Install requirements
 `pip install -r requirements.txt`
 
+If you're on Unix:
+`export FLASK_APP=recognition.py`
+
+If you're on Windows:
+`set FLASK_APP=recognition.py`
+
+Great, now just run the app:
 `flask run`
 
 
