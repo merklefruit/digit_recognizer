@@ -6,7 +6,6 @@ A Python implementation of the popular MNIST dataset application of Digit Recogn
 This project was made to demonstrate a Python implementation of web inference capability.
 The network was trained on the MNIST database in Jupyter Notebook with the Keras library with Tensorflow backend. The recognition error on the test data set is 0.75% after 12 epochs, without hyperparameter tuning. The convolutional neural network I used is an 8-layer Sequential model.
 
-![The output graph from the web app](nvda_prediction.png)
 
 ## Installation
 
