@@ -9,20 +9,23 @@ The network was trained on the MNIST database in Jupyter Notebook with the Keras
 
 ## Installation
 
-1. Just cd in the flask_3 folder, activate your virtual environment, and run:
+```bash
+# clone repo
+git clone https://github.com/nicolas-racchi/digit_recognizer && cd digit_recognizer/flask_3
 
-Install requirements
-`pip install -r requirements.txt`
+# If you're using MacOS/Linux:
+export FLASK_APP=recognition.py
 
-If you're on Unix:
-`export FLASK_APP=recognition.py`
+# If you're using Windors:
+set FLASK_APP=recognition.py
 
-If you're on Windows:
-`set FLASK_APP=recognition.py`
+# (Optional): create a virtual environment
+virtualenv venv
 
-Great, now just run the app:
-`flask run`
-
+# install and run
+pip install -r requirements.txt
+flask run
+```
 
 ## How it works:
 
