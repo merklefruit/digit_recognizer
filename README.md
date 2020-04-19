@@ -1,4 +1,4 @@
-### (Find More about this project on [my website](https://nicolasracchi.com/blog/digit-recognition))
+**If you want to know more, I've written [an article](https://nicolasracchi.com/blog/digit-recognition) on my blog about this project!**
 
 # Digit Recognizer
 A Python implementation of the popular MNIST dataset application of Digit Recognition with Convolutional Neural Networks
